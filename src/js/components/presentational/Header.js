@@ -18,10 +18,11 @@ export default class Header extends Component {
     let addNoteState = this.props.addNoteState;
     const styles = StyleSheet.create({
       header:{
-        flex:1,
         flexDirection: 'row',
         justifyContent:"space-between",
-        marginTop: 50,
+        // marginTop: 15,
+        padding: 20,
+        
         // alignItems: 'stretch',
         // height:50
       }

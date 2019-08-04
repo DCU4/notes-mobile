@@ -68,20 +68,22 @@ export default class Notes extends Component {
         flex:1,
         flexDirection: 'row',
         // justifyContent:"space-between",
-        // alignSelf: 'stretch',
-        // height: 50,
-        // width:100
         
       },
       notesList:{
-        flex:1,
+        padding: 10,
         flexDirection: 'row',
         justifyContent:"space-between",
-        marginTop: 15,
-        alignContent: 'stretch',
-        // height:50,
+        marginLeft: 10,
+        marginRight:10,
         alignItems: 'center',
+        borderBottomColor:'#E1E2E1',
+        borderBottomWidth:1
         
+      },
+      noteText:{
+        color: '#041702',
+        flex:1
       },
       deleted: {
         transform: [{translateY:-100}]
@@ -94,16 +96,16 @@ export default class Notes extends Component {
 
     return (
       !deleted &&
-          <View style={styles.notesList}  className={this.state.class+" note "} onTouchMove={this.onTouchMove}>
+          <View style={styles.notesList} onTouchMove={this.onTouchMove}>
 
             <TouchableOpacity onPress={() => this.props.handlePress(id)}  style={styles.singleNote} id={id}>
-              <Text style={{flex:1}} className="date">{d}</Text>
-              <Text  style={{flex:1}} >{truncate(note)}</Text>
+              <Text style={styles.noteText} className="date">{d}</Text>
+              <Text style={styles.noteText} >{truncate(note)}</Text>
             </TouchableOpacity>
 
             
 
-            <Button title="X" onPress={()=>this.onSubmit()}>
+            <Button color='#041702' title="X" onPress={()=>this.onSubmit()}>
               {/* <Text>X</Text> */}
             </Button>
           </View>

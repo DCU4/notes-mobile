@@ -140,25 +140,26 @@ class Folder extends Component {
     // console.log(api.notes)
 
     return (
-      
-      <ScrollView style={{padding:10}}>
-        <View>
+      <ScrollView style={{backgroundColor:'#b5c1be',paddingTop:50}}>
+      <View style={{flex:1 }}>
 
-        <View>
-          <Header
+      <View  style={{flex:1 ,backgroundColor:'#e8f5e9',justifyContent:"center",}}>
+      <Header
             singleNote={singleNote}
             handlePress={this.handlePress}
             addNote={this.addNote}
             addNoteState={addNote}
             writeNote={this.writeNote}
-            
-          />
-        </View>
+                  
+                />
+      </View>
+                
+
 
 
 
         {!singleNote ? (
-          <View style={{marginTop:25}} className={"all-notes "+this.state.class}>
+          <View style={{backgroundColor:'#eeeeee', flex:7}} className={"all-notes "+this.state.class}>
             {api.notes.map((n, i) => {
               return (
                 <View key={i}>
@@ -181,7 +182,7 @@ class Folder extends Component {
           </View>
         ) : (
           !addNote ? (
-            <View>
+            <View style={{backgroundColor:'#EEEEEE', flex:2}}>
               {/* <Text> */}
                 <SingleNote
                   id={this.state.id}
@@ -192,7 +193,7 @@ class Folder extends Component {
             </View>
             
           ) : (
-          <View>
+          <View style={{backgroundColor:'#EEEEEE', flex:2}}>
             {/* <Text> */}
               <NewNote
                 writeNote={this.writeNote}
@@ -206,9 +207,9 @@ class Folder extends Component {
           
           )
         )}
-        </View>
+
+      </View>
       </ScrollView>
-      
     );
   }
 }
